@@ -1,6 +1,6 @@
-# imoocmall
+# vuemall
 
-> Imooc Mall 
+> vue Mall 
 
 ## Build Setup
 

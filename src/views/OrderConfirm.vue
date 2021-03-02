@@ -170,7 +170,7 @@
                 this.orderTotal = this.subTotal+this.shipping-this.discount+this.tax;
             });
          },
-          payMent(){
+         payMent(){
               var addressId = this.$route.query.addressId;
               axios.post("/users/payMent",{
                 addressId:addressId,

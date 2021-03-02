@@ -400,17 +400,14 @@ router.post("/delAddress", function (req,res,next) {
   });
 });
 
+
 router.post("/delCart",function (req,res,next) {
   var userId = req.cookies.userName;
   var productId = req.body.productId;
   User.update({
     userId:userId
   },{
-    $pull:{
-      'cartList': {
-        'productId':productId
-      }
-    }
+
 
   },function (err,doc) {
     if(err){
@@ -500,8 +497,7 @@ router.post("/payMent", function (req,res,next) {
      })
 
   })
-// ******************************************88
-
+// ******************************************
 
 
 //根据订单Id查询订单信息

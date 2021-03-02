@@ -289,8 +289,6 @@
                 this.$store.commit("updateCartCount",res.result);
               });
             }
-
-
         }
     }
 </script>

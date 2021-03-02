@@ -195,7 +195,6 @@
                   this.getGoodsList(true);
                 }, 500);
             },
-
             addCart(productId){
                 axios.post("/goods/addCart",{
                   productId:productId

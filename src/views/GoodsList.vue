@@ -49,10 +49,14 @@
                       <div class="name">{{item.productName}}</div>
                       <div class="price">{{item.salePrice | currency('$')}}</div>
                       <div class="btn-area">
+<<<<<<< HEAD
 <!--                        <a href="javascript:;" class="btn btn&#45;&#45;m" @click="addCart(item.productId)">加入购物车</a>-->
 <!--                        <router-link class="btn btn&#45;&#45;m btn&#45;&#45;red" href="javascript:;" @click="tips" :to="{path:'/goodsDetail?productId='+item.productId}">详情</router-link>-->
                         <a class="btn btn--m"  @click="tips(item.productId)">查看</a>
 
+=======
+                        <a href="javascript:;" class="btn btn--m" @click="addCart(item.productId)">加入购物车</a>
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
                       </div>
                     </div>
                   </li>
@@ -70,12 +74,17 @@
       </div>
       <modal v-bind:mdShow="mdShow" v-on:close="closeModal">
           <p slot="message">
+<<<<<<< HEAD
              请先登录
+=======
+             请先登录,否则无法加入到购物车中!
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
           </p>
           <div slot="btnGroup">
               <a class="btn btn--m" href="javascript:;" @click="mdShow = false">关闭</a>
           </div>
       </modal>
+<<<<<<< HEAD
 <!--      <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal">-->
 <!--        <p slot="message">-->
 <!--          <svg class="icon-status-ok">-->
@@ -89,6 +98,21 @@
 <!--        </div>-->
 <!--      </modal>-->
 <!--      <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>-->
+=======
+      <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal">
+        <p slot="message">
+          <svg class="icon-status-ok">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-status-ok"></use>
+          </svg>
+          <span>加入购物车成功!</span>
+        </p>
+        <div slot="btnGroup">
+          <a class="btn btn--m" href="javascript:;" @click="mdShowCart = false">继续购物</a>
+          <router-link class="btn btn--m btn--red" href="javascript:;" to="/cart">查看购物车</router-link>
+        </div>
+      </modal>
+      <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
       <nav-footer></nav-footer>
     </div>
 </template>
@@ -110,8 +134,14 @@
                 pageSize:8,
                 busy:true,
                 loading:false,
+<<<<<<< HEAD
                 textVal:"",
                 mdShow:false,
+=======
+                mdShow:false,
+                mdShowCart:false,
+                textVal:"",
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
                 priceFilter:[
                   {
                       startPrice:'0元',
@@ -132,6 +162,10 @@
                 ],
                 priceChecked:'all',
                 filterBy:false,
+<<<<<<< HEAD
+=======
+                overLayFlag:false
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
             }
         },
         mounted(){
@@ -155,6 +189,10 @@
                   producName:this.textVal
               };
               this.loading = true;
+<<<<<<< HEAD
+=======
+              console.log(this.textVal);
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
               axios.get("/goods/list",{
                 params:param
               }).then((response)=>{
@@ -163,6 +201,10 @@
                 if(res.status=="0"){
                   if(flag){
                       this.goodsList = this.goodsList.concat(res.result.list);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
                       if(res.result.count==0){
                           this.busy = true;
                       }else{
@@ -194,8 +236,30 @@
                   this.getGoodsList(true);
                 }, 500);
             },
+<<<<<<< HEAD
             closeModal(){
               this.mdShow = false;
+=======
+            addCart(productId){
+                axios.post("/goods/addCart",{
+                  productId:productId
+                }).then((res)=>{
+                    var res = res.data;
+                    // window.console.log("反应")
+                    if(res.status==0){
+                      // window.console.log('status=0:'+res.status)
+                        this.mdShowCart = true;
+                        this.$store.commit("updateCartCount",1);
+                    }else{
+                      // window.console.log('status!=0:'+res.status)
+                        this.mdShow = true;
+                    }
+                });
+            },
+            closeModal(){
+              this.mdShow = false;
+              this.mdShowCart = false;
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
             },
             showFilterPop(){
               this.filterBy=true;
@@ -204,6 +268,7 @@
             goodsSearch(){
               this.getGoodsList();
             },
+<<<<<<< HEAD
 
             tips(dat){
                 axios.get("/users/checkLogin").then((response)=>{
@@ -226,5 +291,13 @@
                 });
               },
             }
+=======
+            closePop(){
+              this.filterBy=false;
+              this.overLayFlag=false;
+              this.mdShowCart = false;
+            }
+        }
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     }
 </script>

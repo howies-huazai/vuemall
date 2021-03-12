@@ -60,7 +60,11 @@
             <div class="addr-list-wrap">
               <div class="addr-list">
                 <ul>
+<<<<<<< HEAD
                   <li v-for="(item,index) in addressListFilter" v-bind:class="{'check':checkIndex==index}" @click="checkIndex=index,selectedAddrId=item.addressId">
+=======
+                  <li v-for="(item,index) in addressListFilter" v-bind:class="{'check':checkIndex==index}" @click="checkIndex=index;selectedAddrId=item.addressId">
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
                     <dl>
                       <dt>{{item.userName}}</dt>
                       <dd class="address">{{item.streetName}}</dd>

@@ -7,21 +7,31 @@
     <file url="file://$PROJECT_DIR$/package-lock.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resource/db" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/server/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/App.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/assets/css/detail.css" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/src/App.vue" charset="UTF-8" />
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     <file url="file://$PROJECT_DIR$/src/assets/js/banner.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/NavBanner.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/NavBread.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/router/index.js" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/src/views/GoodsDetail.vue" charset="UTF-8" />
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     <file url="file://$PROJECT_DIR$/src/views/GoodsList.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/views/Index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/loading-svg/loading-bars.svg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/loading-svg/loading-bubbles.svg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/loading-svg/loading-spinning-bubbles.svg" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/test/index.html" charset="UTF-8" />
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

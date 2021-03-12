@@ -5,6 +5,11 @@ var Goods = require('../models/goods');
 var cookieParser = require('cookie-parser');
 router.use(cookieParser());
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //连接MongoDB数据库
 mongoose.connect('mongodb://127.0.0.1:27017/dumall');
 
@@ -71,6 +76,7 @@ router.get("/list", function (req,res,next) {
   })
 });
 
+<<<<<<< HEAD
 //查询对应商品详情图片
 router.get("/goodsDetail",function (req,res,next) {
   var productId = req.query.productId;
@@ -96,6 +102,8 @@ router.get("/goodsDetail",function (req,res,next) {
 
 });
 
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //加入到购物车
 router.post("/addCart", function (req,res,next) {
   var userId= req.cookies.userId;
@@ -167,4 +175,9 @@ router.post("/addCart", function (req,res,next) {
   })
 });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 module.exports = router;

@@ -112,8 +112,11 @@
 
 
       <div class="md-overlay" v-if="loginModalFlag" @click="loginModalFlag=false"></div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     </header>
 </template>
 <style>
@@ -204,7 +207,11 @@
               regisModalFlag:false,
               cartnum:false,
               username:"",
+<<<<<<< HEAD
               userpwd:"",
+=======
+              userpwd:""
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
             }
         },
 
@@ -252,7 +259,10 @@
               })
             },
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
             login(){
                 if(!this.userName || !this.userPwd){
                   this.errorTip = true;
@@ -292,8 +302,11 @@
                 this.$store.commit("updateCartCount",res.result);
               });
             }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
         }
     }
 </script>

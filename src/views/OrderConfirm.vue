@@ -170,24 +170,38 @@
                 this.orderTotal = this.subTotal+this.shipping-this.discount+this.tax;
             });
          },
+<<<<<<< HEAD
           payMent(){
               var addressId = this.$route.query.addressId;
 
 
+=======
+         payMent(){
+              var addressId = this.$route.query.addressId;
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
               axios.post("/users/payMent",{
                 addressId:addressId,
                 orderTotal:this.orderTotal
               }).then((response)=>{
                   let res = response.data;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
                   if(res.status=="0"){
                       this.$router.push({
                           path:'/orderSuccess?orderId='+res.result.orderId
                       })
+<<<<<<< HEAD
                     console.log(res.result)
                   }
               });
               // axios.post("/users/delCart")
+=======
+                  }
+              });
+              axios.post("/users/delCart")
+>>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
           }
       }
   }

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="70e02ca3-7ba1-41d6-8e40-3947d014c3f1" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ImoocMall" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1p8eo0jI9LEL3USs9fr5WnJBrT8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.accepted" value="true" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.grunt.node_interpreter" value="/usr/local/bin/node" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="/usr/local/lib/node_modules/gulp" />
+    <property name="js.buildTools.gulp.node_interpreter" value="/usr/local/bin/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="nodejs.mocha.node_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="D:/Node/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="D:\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\10038\Desktop\vuemall-master\static" />
+      <recent name="C:\Users\10038\Desktop\vuemall-master\server" />
+      <recent name="D:\20.Vue2.0+Node.js+MongoDB全栈打造商城系统\代码\v18dyy\src\assets\js" />
+      <recent name="D:\20.Vue2.0+Node.js+MongoDB全栈打造商城系统\代码\v18dyy\src\components" />
+      <recent name="$PROJECT_DIR$/resource" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resource/views/css" />
+      <recent name="$PROJECT_DIR$/resource/views" />
+      <recent name="$PROJECT_DIR$/mock" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration name="vuemall" type="NodeJSConfigurationType" path-to-node="D:/Node/node" path-to-js-file="server/bin/www" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner">
+      <node-interpreter />
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70e02ca3-7ba1-41d6-8e40-3947d014c3f1" name="Default" comment="" />
+      <created>1494739158304</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494739158304</updated>
+      <workItem from="1608650783479" duration="2191000" />
+      <workItem from="1608697562734" duration="12740000" />
+      <workItem from="1608719261621" duration="973000" />
+      <workItem from="1608796627089" duration="253000" />
+      <workItem from="1608822519317" duration="24000" />
+      <workItem from="1610784720140" duration="604000" />
+      <workItem from="1610786476113" duration="3070000" />
+      <workItem from="1610957650143" duration="2339000" />
+      <workItem from="1612683040170" duration="150000" />
+      <workItem from="1612683216955" duration="599000" />
+      <workItem from="1612684298929" duration="251000" />
+      <workItem from="1612686152498" duration="8299000" />
+      <workItem from="1614569318599" duration="82000" />
+      <workItem from="1614569674187" duration="3000" />
+      <workItem from="1614573474281" duration="1762000" />
+      <workItem from="1614576346795" duration="2011000" />
+      <workItem from="1614579587578" duration="40000" />
+      <workItem from="1614610608500" duration="706000" />
+      <workItem from="1614614749136" duration="141000" />
+      <workItem from="1614653572856" duration="2209000" />
+      <workItem from="1614743461963" duration="647000" />
+      <workItem from="1614848264136" duration="1300000" />
+      <workItem from="1614931349874" duration="1557000" />
+      <workItem from="1615040380408" duration="3881000" />
+      <workItem from="1615193772291" duration="6197000" />
+      <workItem from="1615274983140" duration="1207000" />
+      <workItem from="1615276217696" duration="18016000" />
+      <workItem from="1615359539683" duration="10774000" />
+      <workItem from="1615376103473" duration="9122000" />
+      <workItem from="1615429683797" duration="5259000" />
+      <workItem from="1615448011847" duration="619000" />
+      <workItem from="1615450076476" duration="640000" />
+      <workItem from="1615459505413" duration="167000" />
+      <workItem from="1615466727992" duration="14388000" />
+      <workItem from="1615515643549" duration="3779000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="36" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614576253488">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="36" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614576253488" />
+    <state x="882" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615275769512">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="882" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615275769512" />
+    <state x="362" y="284" key="FileChooserDialogImpl" timestamp="1615450089923">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="362" y="284" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615450089923" />
+    <state width="1113" height="125" key="GridCell.Tab.0.bottom" timestamp="1615380817253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1113" height="125" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615380817253" />
+    <state width="1113" height="125" key="GridCell.Tab.0.center" timestamp="1615380817253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1113" height="125" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615380817253" />
+    <state width="1113" height="125" key="GridCell.Tab.0.left" timestamp="1615380817252">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1113" height="125" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615380817252" />
+    <state width="1113" height="125" key="GridCell.Tab.0.right" timestamp="1615380817253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1113" height="125" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615380817253" />
+    <state x="113" y="176" key="SettingsEditor" timestamp="1614576305702">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="113" y="176" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614576305702" />
+    <state x="299" y="337" key="jetbrains.nodejs.interpreters-dialog" timestamp="1614576206033">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="299" y="337" key="jetbrains.nodejs.interpreters-dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614576206033" />
+    <state x="1358" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1615481044079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1358" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615481044079" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="res" />
+        <watch expression="process" language="JavaScript" />
+        <watch expression="page" />
+        <watch expression="doc" language="JavaScript" />
+        <watch expression="doc.checked" language="JavaScript" />
+        <watch expression="err.message" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

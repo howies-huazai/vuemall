@@ -1,0 +1,160 @@
+{
+  "_id" : ObjectId("58c284b13a1bb9aa7033801b"),
+  "productId" : "202000000",
+  "productName" : "Nike DBreak-Type",
+  "salePrice" : 1999,
+  "productImage" : "pic1.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58c284d7117a2e6599abef5e"),
+  "productId" : "202000001",
+  "productName" : "Air Jordan OG",
+  "salePrice" : 80,
+  "productImage" : "pic2.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58c284e6117a2e6599abef5f"),
+  "productId" : "202000002",
+  "productName" : "Nike Air VaporMax 2020 FK",
+  "salePrice" : 3549,
+  "productImage" : "pic3.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e704ef98dab115d336b3f1"),
+  "productId" : "202000003",
+  "productName" : "Nike Zoom Double Stacked",
+  "salePrice" : 59,
+  "productImage" : "pic4.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7050398dab115d336b3f2"),
+  "productId" : "202000004",
+  "productName" : "Air Jordan Reign",
+  "salePrice" : 39,
+  "productImage" : "pic5.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7050c98dab115d336b3f3"),
+  "productId" : "202000005",
+  "productName" : "Kybrid S2 EP",
+  "salePrice" : 1999,
+  "productImage" : "pic6.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7051698dab115d336b3f4"),
+  "productId" : "202000006",
+  "productName" : "Nike Air Max 90 Surplus",
+  "salePrice" : 999,
+  "productImage" : "pic7.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7052198dab115d336b3f5"),
+  "productId" : "202000007",
+  "productName" : "Kybrid S3EP",
+  "salePrice" : 2099,
+  "productImage" : "pic8.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7052a98dab115d336b3f6"),
+  "productId" : "202000008",
+  "productName" : "Kybrid S2 (GS)",
+  "salePrice" : 1000,
+  "productImage" : "pic9.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7053298dab115d336b3f7"),
+  "productId" : "202010009",
+  "productName" : "Nike Air Presto",
+  "salePrice" : 1100,
+  "productImage" : "pic10.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7053c98dab115d336b3f8"),
+  "productId" : "202000010",
+  "productName" : "Nike Air Zoom-Type",
+  "salePrice" : 2000,
+  "productImage" : "pic11.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7054798dab115d336b3f9"),
+  "productId" : "202000011",
+  "productName" : "LeBron XVII E EP",
+  "salePrice" : 1600,
+  "productImage" : "pic12.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7055198dab115d336b3fa"),
+  "productId" : "202000012",
+  "productName" : "LeBron XVIII EP",
+  "salePrice" : 1200,
+  "productImage" : "pic13.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7057798dab115d336b3fb"),
+  "productId" : "202000013",
+  "productName" : "Nike Waffle Racer 2X",
+  "salePrice" : 700,
+  "productImage" : "pic14.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7058498dab115d336b3fc"),
+  "productId" : "202000014",
+  "productName" : "Nike Air Max 97 LX",
+  "salePrice" : 129,
+  "productImage" : "pic15.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7058d98dab115d336b3fd"),
+  "productId" : "202000015",
+  "productName" : "Nike Air Force 1 '07 SE",
+  "salePrice" : 389,
+  "productImage" : "pic16.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7058d98dab115d336b3fe"),
+  "productId" : "202000016",
+  "productName" : "Kybrid S3 (GS)",
+  "salePrice" : 389,
+  "productImage" : "pic17.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7058d98dab115d336b3ff"),
+  "productId" : "202000017",
+  "productName" : "Air Jordan Reign_1",
+  "salePrice" : 389,
+  "productImage" : "pic18.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7058d98dab115d326b3fd"),
+  "productId" : "202000018",
+  "productName" : "Air Jordan 1 ZM Air CMFT SE",
+  "salePrice" : 1199,
+  "productImage" : "pic19.png",
+  "productUrl" : ""
+},
+{
+  "_id" : ObjectId("58e7258d98dab115d336b3fd"),
+  "productId" : "202000019",
+  "productName" : "Nike Air Force 1 '07 LX",
+  "salePrice" : 389,
+  "productImage" : "pic20.png",
+  "productUrl" : ""
+}

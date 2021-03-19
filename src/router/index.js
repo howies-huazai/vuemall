@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import GoodsList from '@/views/GoodsList'
 import Cart from '@/views/Cart'
 import Address from '@/views/Address'
 import OrderConfirm from '@/views/OrderConfirm'
 import OrderSuccess from '@/views/OrderSuccess'
-<<<<<<< HEAD
 import GoodsDetail from "../views/GoodsDetail";
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
+
 
 
 Vue.use(Router);
@@ -45,7 +42,6 @@ export default new Router({
       path: '/orderSuccess',
       name: 'OrderSuccess',
       component:OrderSuccess
-<<<<<<< HEAD
     },
     {
       path:'/goodsDetail',
@@ -55,8 +51,6 @@ export default new Router({
       //   path:'?productId=:productId',
       //   name:'?productId',
       // }]
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     }
   ]
 })

@@ -22,34 +22,36 @@
         </defs>
       </svg>
 <!--      end-->
+
 <!--      顶部栏-->
+      <div class="navbarfixed">
         <div class="navbar">
-<!--          左边顶部栏-->
-            <div class="navbar-left-container">
-              <a href="/">
-<!--                <img class="navbar-brand-logo" src="/static/logo.png">-->
-              </a>
-            </div>
-<!--          右边顶部栏-->
-            <div class="navbar-right-container" style="display: flex;">
-              <div class="navbar-menu-container">
-                <span class="navbar-link" v-text="nickName" v-if="nickName"></span>
-                <a href="javascript:;" class="navbar-link" @click="loginModalFlag=true" v-if="!nickName">登录</a>
-                <a href="javascript:;" class="navbar-link" @click="logOut" v-else>退出</a>
-                <a href="javascript:;" @click="regisModalFlag=true">注册</a>
-                <!--购物车图标-->
-                <div class="navbar-cart-container">
-                  <span class="navbar-cart-count" v-show="cartnum" v-text="cartCount" v-if="cartCount"></span>
-                  <a class="navbar-link navbar-cart-link" href="/#/cart">
-                    <svg class="navbar-cart-logo" fill="#fff">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
-                    </svg>
-                  </a>
-                </div>
-<!--                end-->
+          <!--          左边顶部栏-->
+          <div class="navbar-left-container">
+            <a href="/"></a>
+          </div>
+          <!--          右边顶部栏-->
+          <div class="navbar-right-container" style="display: flex;">
+            <div class="navbar-menu-container">
+              <span class="navbar-link" v-text="nickName" v-if="nickName"></span>
+              <a href="javascript:;" class="navbar-link" @click="loginModalFlag=true" v-if="!nickName">登录</a>
+              <a href="javascript:;" class="navbar-link" @click="logOut" v-else>退出</a>
+              <a href="javascript:;" class="navbar-link" @click="regisModalFlag=true" v-show="registShow">注册</a>
+              <!--购物车图标-->
+              <div class="navbar-cart-container">
+                <span class="navbar-cart-count" v-show="cartnum" v-text="cartCount" v-if="cartCount"></span>
+                <a class="navbar-link navbar-cart-link" href="/#/cart">
+                  <svg class="navbar-cart-logo" fill="#fff">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
+                  </svg>
+                </a>
               </div>
+              <!--                end-->
             </div>
+          </div>
         </div>
+      </div>
+
 <!--      end-->
 <!--      登录页面-->
         <div class="md-modal modal-msg md-modal-transition" v-bind:class="{'md-show':loginModalFlag}">
@@ -104,7 +106,7 @@
               </ul>
             </div>
             <div class="login-wrap">
-              <a href="javascript:;" class="btn-login" @click="register">注 册</a>
+              <a href="javascript:;" class="btn-login" @click="register" >注 册</a>
             </div>
           </div>
         </div>
@@ -112,21 +114,33 @@
 
 
       <div class="md-overlay" v-if="loginModalFlag" @click="loginModalFlag=false"></div>
-<<<<<<< HEAD
+
+      <modal v-bind:mdShow="mdShow" >
+        <p slot="message">
+          账号已退出
+        </p>
+        <div slot="btnGroup">
+          <a class="btn btn--m" href="javascript:;" @click="mdShow = false">关闭</a>
+        </div>
+      </modal>
 
 
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
     </header>
 </template>
 <style>
   .header {
     width: 100%;
-    /*height: 44px;*/
-    /*line-height: 44px;*/
     background-color: #333;
     font-family: "moderat",sans-serif;
     font-size: 16px;
+  }
+  .navbarfixed{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: #000;
   }
   .navbar {
     display: flex;
@@ -145,9 +159,7 @@
     align-items: center;
     margin-left: -20px;
   }
-  .navbar-brand-logo {
-    /*width: 120px;*/
-  }
+
   .header a, .footer a {
     color: #ada9a5;
     text-decoration: none;
@@ -195,6 +207,7 @@
 </style>
 <script>
     import './../assets/css/login.css'
+    import Modal  from "./Modal";
     import axios from 'axios'
     import { mapState } from 'vuex'
     export default{
@@ -207,14 +220,14 @@
               regisModalFlag:false,
               cartnum:false,
               username:"",
-<<<<<<< HEAD
               userpwd:"",
-=======
-              userpwd:""
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
+              mdShow:false,
+              registShow:true
             }
         },
-
+        components:{
+            Modal
+        },
         computed:{
           ...mapState(['nickName','cartCount'])
         },
@@ -231,16 +244,19 @@
                     if(res.status=="0"){
                       this.$store.commit("updateUserInfo",res.result);
                       this.loginModalFlag = false;
+                      this.registShow = false;
                     }else{
                       if(this.$route.path!="/goods"){
                         this.$router.push("/goods");
                       }
+                      this.registShow = true;
+
                     }
                 });
             },
 
             register(){
-              window.console.log(this.username,this.userpwd)
+
               axios.post("/users/register",{
                 userName:this.username,
                 userPwd:this.userpwd
@@ -259,11 +275,7 @@
               })
             },
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-            login(){
+           login(){
                 if(!this.userName || !this.userPwd){
                   this.errorTip = true;
                   return;
@@ -274,14 +286,15 @@
                 }).then((response)=>{
                     let res = response.data;
                     this.cartnum=true;
-                    window.console.log(res.status)
                     if(res.status=="0"){
                       this.errorTip = false;
                       this.loginModalFlag = false;
+                      this.registShow = false;
                       this.$store.commit("updateUserInfo",res.result.userName);
                       this.getCartCount();
                     }else{
                       this.errorTip = true;
+                      this.registShow = true;
                     }
                 });
             },
@@ -291,7 +304,13 @@
                   let res = response.data;
                   if(res.status=="0"){
                     this.$store.commit("updateUserInfo",res.result.userName);
+                    this.mdShow = true;
+                    this.registShow = true;
+                    this.$router.push({
+                      path:'/goods'
+                    })
                   }
+                  this.mdShow= false;
                   this.cartnum=false;
                 })
             },
@@ -302,11 +321,6 @@
                 this.$store.commit("updateCartCount",res.result);
               });
             }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
         }
     }
 </script>

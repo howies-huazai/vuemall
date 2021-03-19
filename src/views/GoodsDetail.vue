@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-top: 70px;" onLoad="scrollTo(0,10)">
       <nav-header></nav-header>
       <goods-item></goods-item>
       <div class="introduce">
@@ -16,9 +16,7 @@
   import GoodsItem from "../components/GoodsItem";
   import "../assets/css/base.css"
   import "../assets/js/jquery-1.12.1.min"
-  import "../assets/js/jquery.mousewheel"
-
-
+  // import "../assets/js/jquery.mousewheel"
 
     export default {
         name: "GoodsDetail",
@@ -46,10 +44,12 @@
   .introduce{
     width: 1200px;
     margin: 50px auto;
+    text-align: center;
   }
   .introduce img{
-    width: 100%;
+    width: 80%;
     height: 100%;
+    margin: 0 auto;
   }
   .introduce .split{
     display: block;
@@ -57,4 +57,5 @@
     height: 50px;
     background-color: #000;
   }
+
 </style>

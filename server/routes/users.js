@@ -292,11 +292,7 @@ router.get("/addressList", function (req,res,next) {
   })
 });
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //设置默认地址接口
 router.post("/setDefault", function (req,res,next) {
   var userId = req.cookies.userId,
@@ -412,16 +408,11 @@ router.post("/delCart",function (req,res,next) {
   User.update({
     userId:userId
   },{
-<<<<<<< HEAD
     $pull:{
       'cartList': {
         'productId':productId
       }
     }
-=======
-
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-
   },function (err,doc) {
     if(err){
       res.json({
@@ -444,10 +435,6 @@ router.post("/payMent", function (req,res,next) {
   var userId = req.cookies.userId,
     addressId = req.body.addressId,
     orderTotal = req.body.orderTotal;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
   User.findOne({userId:userId}, function (err,doc) {
      if(err){
         res.json({
@@ -456,13 +443,7 @@ router.post("/payMent", function (req,res,next) {
             result:''
         });
      }else {
-<<<<<<< HEAD
        var address = '', goodsList = [];
-
-=======
-
-       var address = '', goodsList = [];
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
        //获取当前用户的地址信息
        doc.addressList.forEach((item) => {
          if (addressId == item.addressId) {
@@ -491,24 +472,14 @@ router.post("/payMent", function (req,res,next) {
          orderStatus: '1',
          createDate: createDate
        };
-<<<<<<< HEAD
-       doc.orderList.push(order);
-=======
 
        doc.orderList.push(order);
 
-
-
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
        doc.save(function (err1, doc1) {
          if (err1) {
            res.json({
              status: "1",
-<<<<<<< HEAD
-             msg: err1.message,
-=======
              msg: err.message,
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
              result: ''
            });
          } else {
@@ -522,22 +493,11 @@ router.post("/payMent", function (req,res,next) {
            });
          }
        });
-<<<<<<< HEAD
      }
      })
   });
-// ******************************************
-
-=======
-
-     }
-     })
-
-  })
-// ******************************************
 
 
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //根据订单Id查询订单信息
 router.get("/orderDetail", function (req,res,next) {
   var userId = req.cookies.userId,orderId = req.param("orderId");

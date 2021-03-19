@@ -1,7 +1,7 @@
 <template>
     <div>
       <nav-header></nav-header>
-      <nav-banner></nav-banner>
+      <nav-banner @fatherMethod="fatherMethod"></nav-banner>
       <nav-bread>
         <span>商品</span>
       </nav-bread>
@@ -18,9 +18,9 @@
             </div>
             <div style="float:right;">
               <span class="sortby">排列方式：</span>
-              <a href="javascript:;" class="default cur">Default</a>
-              <a href="javascript:;" class="price" v-bind:class="{'sort-up':sortFlag}" @click="sortGoods()">Price <svg class="icon icon-arrow-short"><use xlink:href="#icon-arrow-short"></use></svg></a>
-              <a href="javascript:;" class="filterby stopPop" @click.stop="showFilterPop">Filter by</a>
+<!--              <a href="javascript:;" class="default cur">Default</a>-->
+              <a href="javascript:;" class="price" v-bind:class="{'sort-up':sortFlag}" @click="sortGoods()">价格 <svg class="icon icon-arrow-short"><use xlink:href="#icon-arrow-short"></use></svg></a>
+              <a href="javascript:;" class="filterby stopPop" @click.stop="showFilterPop">排序</a>
             </div>
           </div>
 
@@ -49,14 +49,11 @@
                       <div class="name">{{item.productName}}</div>
                       <div class="price">{{item.salePrice | currency('$')}}</div>
                       <div class="btn-area">
-<<<<<<< HEAD
 <!--                        <a href="javascript:;" class="btn btn&#45;&#45;m" @click="addCart(item.productId)">加入购物车</a>-->
 <!--                        <router-link class="btn btn&#45;&#45;m btn&#45;&#45;red" href="javascript:;" @click="tips" :to="{path:'/goodsDetail?productId='+item.productId}">详情</router-link>-->
                         <a class="btn btn--m"  @click="tips(item.productId)">查看</a>
 
-=======
-                        <a href="javascript:;" class="btn btn--m" @click="addCart(item.productId)">加入购物车</a>
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
+<!--                        <a href="javascript:;" class="btn btn&#45;&#45;m" @click="addCart(item.productId)">加入购物车</a>-->
                       </div>
                     </div>
                   </li>
@@ -74,31 +71,12 @@
       </div>
       <modal v-bind:mdShow="mdShow" v-on:close="closeModal">
           <p slot="message">
-<<<<<<< HEAD
              请先登录
-=======
-             请先登录,否则无法加入到购物车中!
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
           </p>
           <div slot="btnGroup">
               <a class="btn btn--m" href="javascript:;" @click="mdShow = false">关闭</a>
           </div>
       </modal>
-<<<<<<< HEAD
-<!--      <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal">-->
-<!--        <p slot="message">-->
-<!--          <svg class="icon-status-ok">-->
-<!--            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-status-ok"></use>-->
-<!--          </svg>-->
-<!--          <span>加入购物车成功!</span>-->
-<!--        </p>-->
-<!--        <div slot="btnGroup">-->
-<!--          <a class="btn btn&#45;&#45;m" href="javascript:;" @click="mdShowCart = false">继续购物</a>-->
-<!--          <router-link class="btn btn&#45;&#45;m btn&#45;&#45;red" href="javascript:;" to="/cart">查看购物车</router-link>-->
-<!--        </div>-->
-<!--      </modal>-->
-<!--      <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>-->
-=======
       <modal v-bind:mdShow="mdShowCart" v-on:close="closeModal">
         <p slot="message">
           <svg class="icon-status-ok">
@@ -112,7 +90,6 @@
         </div>
       </modal>
       <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
       <nav-footer></nav-footer>
     </div>
 </template>
@@ -123,181 +100,160 @@
     import NavBread from './../components/NavBread'
     import Modal from './../components/Modal'
     import axios from 'axios'
-    import './../assets/js/banner';
     import './../assets/css/product.css'
-    export default{
-        data(){
-            return {
-                goodsList:[],
-                sortFlag:true,
-                page:1,
-                pageSize:8,
-                busy:true,
-                loading:false,
-<<<<<<< HEAD
-                textVal:"",
-                mdShow:false,
-=======
-                mdShow:false,
-                mdShowCart:false,
-                textVal:"",
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-                priceFilter:[
-                  {
-                      startPrice:'0元',
-                      endPrice:'100元'
-                  },
-                  {
-                    startPrice:'100元',
-                    endPrice:'500元'
-                  },
-                  {
-                    startPrice:'500元',
-                    endPrice:'1000元'
-                  },
-                  {
-                    startPrice:'1000元',
-                    endPrice:'3000元'
-                  }
-                ],
-                priceChecked:'all',
-                filterBy:false,
-<<<<<<< HEAD
-=======
-                overLayFlag:false
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
+    export default {
+      data() {
+        return {
+          goodsList: [],
+          sortFlag: true,
+          page: 1,
+          pageSize: 8,
+          busy: true,
+          loading: false,
+          mdShow: false,
+          mdShowCart: false,
+          textVal: "",
+          priceFilter: [
+            {
+              startPrice: '0元',
+              endPrice: '100元'
+            },
+            {
+              startPrice: '100元',
+              endPrice: '500元'
+            },
+            {
+              startPrice: '500元',
+              endPrice: '1000元'
+            },
+            {
+              startPrice: '1000元',
+              endPrice: '3000元'
             }
-        },
-        mounted(){
-            this.getGoodsList();
-        },
-        components:{
-          NavHeader,
-          NavBanner,
-          NavFooter,
-          NavBread,
-          Modal
-        },
-        methods:{
-          //搜索商品
-            getGoodsList(flag){
-              var param = {
-                  page:this.page,
-                  pageSize:this.pageSize,
-                  sort:this.sortFlag?1:-1,
-                  priceLevel:this.priceChecked,
-                  producName:this.textVal
-              };
-              this.loading = true;
-<<<<<<< HEAD
-=======
-              console.log(this.textVal);
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-              axios.get("/goods/list",{
-                params:param
-              }).then((response)=>{
-                var res = response.data;
-                this.loading = false;
-                if(res.status=="0"){
-                  if(flag){
-                      this.goodsList = this.goodsList.concat(res.result.list);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-                      if(res.result.count==0){
-                          this.busy = true;
-                      }else{
-                          this.busy = false;
-                      }
-                  }else{
-                      this.goodsList = res.result.list;
-                      this.busy = false;
-                  }
-                }else{
-                  this.goodsList = [];
-                }
-              });
-            },
-            sortGoods(){
-                this.sortFlag = !this.sortFlag;
-                this.page = 1;
-                this.getGoodsList();
-            },
-            setPriceFilter(index){
-              this.priceChecked = index;
-              this.page = 1;
-              this.getGoodsList();
-            },
-            loadMore(){
-                this.busy = true;
-                setTimeout(() => {
-                  this.page++;
-                  this.getGoodsList(true);
-                }, 500);
-            },
-<<<<<<< HEAD
-            closeModal(){
-              this.mdShow = false;
-=======
-            addCart(productId){
-                axios.post("/goods/addCart",{
-                  productId:productId
-                }).then((res)=>{
-                    var res = res.data;
-                    // window.console.log("反应")
-                    if(res.status==0){
-                      // window.console.log('status=0:'+res.status)
-                        this.mdShowCart = true;
-                        this.$store.commit("updateCartCount",1);
-                    }else{
-                      // window.console.log('status!=0:'+res.status)
-                        this.mdShow = true;
-                    }
-                });
-            },
-            closeModal(){
-              this.mdShow = false;
-              this.mdShowCart = false;
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
-            },
-            showFilterPop(){
-              this.filterBy=true;
-              this.overLayFlag=true;
-            },
-            goodsSearch(){
-              this.getGoodsList();
-            },
-<<<<<<< HEAD
-
-            tips(dat){
-                axios.get("/users/checkLogin").then((response)=>{
-                  var res = response.data;
-                  if(res.status == '10001'){
-                    this.mdShow = true;
-                  }else{
-                    this.$router.push({
-                      path:'/goodsDetail?productId='+dat
-                    })
-                    this.mdShow = false;
-                  }
-                  // if(res.status=="0"){
-                  //   this.$store.commit("updateUserInfo",res.result);
-                  // }else{
-                  //   if(this.$route.path!="/goods"){
-                  //     this.$router.push("/goods");
-                  //   }
-                  // }
-                });
-              },
-            }
-=======
-            closePop(){
-              this.filterBy=false;
-              this.overLayFlag=false;
-              this.mdShowCart = false;
-            }
+          ],
+          priceChecked: 'all',
+          filterBy: false,
+          overLayFlag: false
         }
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
+      },
+      mounted() {
+        this.getGoodsList();
+      },
+      components: {
+        NavHeader,
+        NavBanner,
+        NavFooter,
+        NavBread,
+        Modal
+      },
+      methods: {
+        fatherMethod(){
+         alert('测试');
+        },
+
+        //搜索商品
+        getGoodsList(flag) {
+          var param = {
+            page: this.page,
+            pageSize: this.pageSize,
+            sort: this.sortFlag ? 1 : -1,
+            priceLevel: this.priceChecked,
+            producName: this.textVal
+          };
+          this.loading = true;
+          console.log(this.textVal);
+          axios.get("/goods/list", {
+            params: param
+          }).then((response) => {
+            var res = response.data;
+            this.loading = false;
+            if (res.status == "0") {
+              if (flag) {
+                this.goodsList = this.goodsList.concat(res.result.list);
+                if (res.result.count == 0) {
+                  this.busy = true;
+                } else {
+                  this.busy = false;
+                }
+              } else {
+                this.goodsList = res.result.list;
+                this.busy = false;
+              }
+            } else {
+              this.goodsList = [];
+            }
+          });
+        },
+        sortGoods() {
+          this.sortFlag = !this.sortFlag;
+          this.page = 1;
+          this.getGoodsList();
+        },
+        setPriceFilter(index) {
+          this.priceChecked = index;
+          this.page = 1;
+          this.getGoodsList();
+        },
+        loadMore() {
+          this.busy = true;
+          setTimeout(() => {
+            this.page++;
+            this.getGoodsList(true);
+          }, 500);
+        },
+        addCart(productId) {
+          axios.post("/goods/addCart", {
+            productId: productId
+          }).then((res) => {
+            var res = res.data;
+            // window.console.log("反应")
+            if (res.status == 0) {
+              // window.console.log('status=0:'+res.status)
+              this.mdShowCart = true;
+              this.$store.commit("updateCartCount", 1);
+            } else {
+              // window.console.log('status!=0:'+res.status)
+              this.mdShow = true;
+            }
+          });
+        },
+        closeModal() {
+          this.mdShow = false;
+          this.mdShowCart = false;
+        },
+        showFilterPop() {
+          this.filterBy = true;
+          this.overLayFlag = true;
+        },
+        goodsSearch() {
+          this.getGoodsList();
+        },
+        tips(dat) {
+          axios.get("/users/checkLogin").then((response) => {
+            var res = response.data;
+            if (res.status == '10001') {
+              this.mdShow = true;
+            } else {
+              this.$router.push({
+                path: '/goodsDetail?productId=' + dat
+              })
+              this.mdShow = false;
+            }
+            // if(res.status=="0"){
+            //   this.$store.commit("updateUserInfo",res.result);
+            // }else{
+            //   if(this.$route.path!="/goods"){
+            //     this.$router.push("/goods");
+            //   }
+            // }
+          });
+        },
+
+      closePop() {
+        this.filterBy = false;
+        this.overLayFlag = false;
+        this.mdShowCart = false;
+      }
+    }
     }
 </script>

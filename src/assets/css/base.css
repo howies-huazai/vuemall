@@ -620,7 +620,6 @@ a:hover {
 }
 
 .btn:hover, .btn[href]:hover {
-<<<<<<< HEAD
   background-color: #f16f75;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
@@ -629,10 +628,9 @@ a:hover {
 }
 
 .btn--red, .btn--red[href] {
-  background-color: #fff;
+  /*background-color: #fff;*/
   border-color: #d1434a;
   color: #d1434a;
-=======
   background-color: #ffe5e6;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
@@ -642,7 +640,6 @@ a:hover {
   background-color: #000;
   border-color: #000;
   color: #fff;
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 }
 
 .btn--red:hover, .btn--red[href]:hover {
@@ -906,15 +903,9 @@ html {
 .footer {
   background-color: #000;
   color: #ada9a5;
-<<<<<<< HEAD
   /*position: relative;*/
   text-align: center;
   position: relative;
-
-=======
-  position: relative;
-  text-align: center;
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 }
 
 .footer__wrap {
@@ -944,10 +935,7 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-<<<<<<< HEAD
   bottom: 0;
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);

@@ -5,11 +5,7 @@ var Goods = require('../models/goods');
 var cookieParser = require('cookie-parser');
 router.use(cookieParser());
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //连接MongoDB数据库
 mongoose.connect('mongodb://127.0.0.1:27017/dumall');
 
@@ -31,10 +27,12 @@ router.get("/list", function (req,res,next) {
   let pageSize = parseInt(req.param("pageSize"));
   let priceLevel = req.param("priceLevel");
   let producName = req.param("producName");
+  // let categoryName = req.param("categoryName");
   let sort = req.param("sort");
   let skip = (page-1)*pageSize;
   var priceGt = '',priceLte = '';
   let params = {};
+
   //价格选项
   if(priceLevel!='all'){
     switch (priceLevel){
@@ -46,14 +44,20 @@ router.get("/list", function (req,res,next) {
     params.salePrice={
           $gt:priceGt,
           $lte:priceLte
-      }
+    }
   }
+
   //搜索功能
   if(producName!=''){
       params.productName={
         $regex: producName+".*"
       }
   }
+  // else{
+  //   params.productName={
+  //     $regex: categoryName+".*"
+  //   }
+  // }
 
   let goodsModel = Goods.find(params).skip(skip).limit(pageSize);
   goodsModel.sort({'salePrice':sort});
@@ -76,7 +80,6 @@ router.get("/list", function (req,res,next) {
   })
 });
 
-<<<<<<< HEAD
 //查询对应商品详情图片
 router.get("/goodsDetail",function (req,res,next) {
   var productId = req.query.productId;
@@ -94,7 +97,10 @@ router.get("/goodsDetail",function (req,res,next) {
         result: {
           proName:doc.productName,
           proPrice:doc.salePrice,
-          proImg:doc.productImage
+          proImg:doc.productImage,
+          proSize: doc.productSize,
+          proIntro:doc.productIntro,
+          imgExtra:doc.imgExtra
         }
       })
     }
@@ -102,8 +108,6 @@ router.get("/goodsDetail",function (req,res,next) {
 
 });
 
-=======
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 //加入到购物车
 router.post("/addCart", function (req,res,next) {
   var userId= req.cookies.userId;
@@ -175,9 +179,6 @@ router.post("/addCart", function (req,res,next) {
   })
 });
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 4a4f2c8ad18a1128eca075ed9b42b4b438c33c07
 module.exports = router;

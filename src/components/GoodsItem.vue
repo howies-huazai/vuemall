@@ -17,7 +17,7 @@
           <div class="show_box">
             <ul class="picture_container" ref="middlePicture">
               <li class="picture_item" @mouseover="tabPicture(item)" v-for="(item, index) in pictureList" :key="index">
-                <img :src="item.url" class="small_img" alt="">
+                <img :src="item" class="small_img" alt="">
               </li>
             </ul>
           </div>
@@ -41,16 +41,9 @@
         </p>
         <p id='size'>
           <font>尺码</font>
-          <span>36.5</span>
-          <span>38</span>
-          <span>39</span>
-          <span>40</span>
-          <span>41</span>
-          <span>41.5</span>
-          <span>43</span>
-          <span>44</span>
+          <span v-for="item in goodsSize">{{item}}</span>
         </p>
-        <p class="text">前沿创新设计邂逅非凡舒适脚感，焕新演绎 Nike 的伟大发明。Nike Air Max Zephyr 男子运动鞋采用未来感十足的外观设计，将可视 Air 气囊融入鞋面，同时令你畅享快速体验。利落的运动风版型，结合耐穿的无缝表层和质感出众的透气网眼布，塑就时尚外观；柔软加垫鞋口，缔造舒适自如的迈步体验。</p>
+        <p class="text">{{goodsIntro}}</p>
       </div>
       <div class="bottom">
         <p>价格： <font>￥ <span class='price'>{{price}}</span></font></p>
@@ -98,12 +91,9 @@
     name:"GoodsItem",
     data() {
       return {
-        pictureList: [
-          {url: '/static/'+this.pic},
-          {url: '/static/pic1.png'},
-          {url: '/static/pic1.png'},
-          {url: '/static/pic1.png'}
-        ],
+        pictureList: [],
+        goodsSize:[],
+        goodsIntro:'',
         middleImg: '', // 中图图片地址
         bigImg: '', // 大图图片地址
         isShade: false, // 控制阴影显示与否
@@ -127,7 +117,7 @@
       if (this.imgList && this.imgList.length) {
         this.pictureList = this.imgList
       }
-      this.middleImg = this.pictureList[0].url
+      this.middleImg = this.pictureList[0];
       // 计算缩略图的宽度,默认是显示4张图片,两边箭头的宽度和为50
       this.itemWidth = (this.middleImgWidth-50) / 4
     },
@@ -225,6 +215,7 @@
         });
       },
 
+      //获取商品详情信息
       goodprice(){
         axios.get("/goods/goodsDetail",{
           params:{
@@ -235,9 +226,13 @@
           if(res.status == '0'){
             this.price = res.result.proPrice;
             this.name = res.result.proName;
-            this.middleImg = '/static/'+res.result.proImg
+            this.goodsSize = res.result.proSize;
+            this.goodsIntro = res.result.proIntro;
+            this.pictureList = res.result.imgExtra;
+            this.middleImg = '/static/'+res.result.proImg;
+            console.log(this.pictureList)
           }else{
-            console.log('失败')
+            console.log('商品详情信息获取失败')
           }
         })
       },
@@ -323,22 +318,21 @@
     },
     // 切换图片
       tabPicture(item) {
-      this.middleImg = item.url
+      this.middleImg = item
     },
+
     // 获取网页滚出去的距离（包括上面滚出去的部分和左边滚出去的部分）
-    // * @returns {{scrollTop: (Number|number), scrollLeft: (Number|number)}}
       getPageScroll() {
       return {
         scrollTop: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
         scrollLeft: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
       }
     },
-    //
+
+
+
     //  获取事件对象点击的点，相对于文档左上角的坐标
-    //  @param e
-    //  @returns {{pageX: *, pageY: *}}
-    //
-    getEventPage(e) {
+      getEventPage(e) {
       return {
         pageX: e.clientX + this.getPageScroll().scrollLeft,
         pageY: e.clientY + this.getPageScroll().scrollTop
@@ -391,10 +385,9 @@
     position: absolute;
     overflow: hidden;
     top: 0;
-    left: 22px;
+    left: 27px;
   }
   .left_contaner .picture_container .picture_item {
-    height: 100%;
     float: left;
     padding: 6px;
     box-sizing: border-box;
@@ -403,8 +396,10 @@
     border: 2px solid #f2019f;
   }
   .left_contaner .picture_container .picture_item img {
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: auto;
+    border: 1px solid black;
+
   }
   .right_contanier {
     overflow: hidden;
@@ -516,16 +511,7 @@
     margin:0 5px;
     color:#90c;
   }
-  /*.bottom button{*/
-  /*  width:200px;*/
-  /*  height:50px;*/
-  /*  font-family:'Microsoft yahei';*/
-  /*  margin-top:20px;*/
-  /*  font-size:20px;*/
-  /*  background:#f60;*/
-  /*  color:#fff;*/
-  /*  border:none;*/
-  /*}*/
+
   /*选择信息结束*/
 
   .detailBox{
@@ -537,7 +523,6 @@
 
   .remain {
     float: left;
-    /*background-color: darkseagreen;*/
     width: 250px;
     height: 100%;
   }
